@@ -1,39 +1,20 @@
 addEventListener("DOMContentLoaded", (e) => {
     setTimeout(() => {
-        let n1, n2, n3, mayor, menor, igual="";
-        n1=Number(prompt("Ingrese el valor del primer número: "));
-        n2=Number(prompt("Ingrese el valor del segundo número: "));
-        n3=Number(prompt("Ingrese el valor del tercer número: "));
-
-        if (n1>n2 && n1>n3) {
-            mayor=n1;
+        let opc, b_triangulo, h_triangulo, a_triangulo, r_circulo, a_circulo;
+        opc=Number(prompt("Seleccione una opción: \n▶  1. Área de un triángulo \n▶  2. Área de un círculo"));
+        if (opc==1) {
+            b_triangulo=Number(prompt("Ingrese la base del triángulo: "));
+            h_triangulo=Number(prompt("Ingrese la altura del triángulo: "));
+            a_triangulo=(b_triangulo*h_triangulo)/2;
+            alert("El área del triángulo es: "+a_triangulo);
         }
-        else if (n2>n1 && n2>n3) {
-            mayor=n2;
-        }
-        else if (n3>n1 && n3>n2) {
-            mayor=n3;
-        }
-
-        if (n1<n2 && n1<n3) {
-            menor=n1;
-        }
-        else if (n2<n1 && n2<n3) {
-            menor=n2;
-        }
-        else if (n3<n1 && n3<n2) {
-            menor=n3;
-        }
-
-        if (n1==n2 && n1==n3) {
-            igual="Los números son iguales";
-        }
-
-        if (igual=="") {
-            alert("▶ Números: ["+n1+", "+n2+", "+n3+"]\n▶ Número mayor: "+mayor+"\n▶ Número menor: "+menor);
+        else if (opc==2) {
+            r_circulo=Number(prompt("Ingrese el radio del círculo: "));
+            a_circulo=Math.PI*Math.pow(r_circulo, 2);
+            alert("El área del círculo es: "+a_circulo);
         }
         else {
-            alert("▶ Números: ["+n1+", "+n2+", "+n3+"]\n▶ "+igual);
+            alert("¡Por favor seleccione una opción válida!");
         }
     }, 500);
 });
