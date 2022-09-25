@@ -1,15 +1,18 @@
 addEventListener("DOMContentLoaded", (e) => {
     setTimeout(() => {
-        let b, h, a;
-        b=Number(prompt("Ingrese el valor de la base del rectángulo: "));
-        h=Number(prompt("Ingrese el valor de la altura del rectángulo: "));
+        let p, t, estado="";
+        p=Number(prompt("Ingrese el valor de la presión: "));
+        t=Number(prompt("Ingrese el valor de la temperatura: "));
 
-        if(b>0 && h>0) {
-            a=b*h;
-            alert("El área del rectángulo es: "+a);
+        if(p>200) {
+            estado="Alarma";
+        }
+        else if(t>100) {
+            estado="Alarma";
         }
         else {
-            alert("¡Haz ingresado valores negativos!\nNo se puede calcular el área del rectángulo");
+            estado="Normal";
         }
+        alert("▶  El estado actual es: "+estado);
     }, 500);
 });
