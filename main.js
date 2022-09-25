@@ -1,19 +1,14 @@
 addEventListener("DOMContentLoaded", (e) => {
     setTimeout(() => {
-        let cant, sum_par=0, prod_imp=1;
-        let pares=[];
-        let impares=[];
-        cant=Number(prompt("Ingrese hasta que número desea incluir: "));
-        for(let i=1; i<=cant; i++) {
-            if(i%2==0) {
-                pares.push(i);
-                sum_par+=i;
-            } 
-            else {
-                impares.push(i);
-                prod_imp*=i;
-            }
+        let prods, valor, subtot=0, val_iva, total;
+        const iva=19;
+        prods=Number(prompt("Ingrese la cantidad de productos: "));
+        for(let i=1; i<=prods; i++){
+            valor=Number(prompt("Ingrese el valor del producto #"+i+": "));
+            subtot+=valor;
         }
-        alert("▶ Números pares: "+pares+"\n    La suma de los números pares es: "+sum_par+"\n\n▶ Numeros impares: "+impares+"\n    El producto de los números impares es: "+prod_imp);
+        val_iva=(subtot*iva)/100;
+        total=subtot+val_iva;
+        alert("▶ El subtotal de la compra es: $"+subtot+"\n▶ El porcentaje de IVA es: "+iva+"%\n▶ El valor del IVA es: $"+val_iva+"\n▶ El total de la compra es: $"+total);
     }, 500);
 });
